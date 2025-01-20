@@ -6,7 +6,8 @@ namespace App_Multiplataforma
     {
         int count = 0;
         Random random = new Random();
-        string[] images = { "adam.png", "venom.png", "mantis.png", "bucky.png" };
+        string[] imagenes = { "adam.png", "venom.png", "mantis.png", "bucky.png" };
+        string ultimaImagen = string.Empty;
 
         public MainPage()
         {
@@ -15,18 +16,16 @@ namespace App_Multiplataforma
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            string nuevaImagen;
+            do
+            {
+                int index = random.Next(imagenes.Length);
+                nuevaImagen = imagenes[index];
+            } while (nuevaImagen == ultimaImagen);
 
-            // Seleccionar una imagen aleatoria
-            int index = random.Next(images.Length);
-            MyImage.Source = images[index];
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            MiImagen.Source = nuevaImagen;
+            ultimaImagen = nuevaImagen;
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
