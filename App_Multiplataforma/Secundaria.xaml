@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Multiplataforma.secundaria" Background="#816899">
+
+    <ScrollView Background="#4A7B5B" BackgroundColor="#694343">
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+               x:Name="MiImagen"
+                Source="venom.png"
+                HeightRequest="300"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a hovercraft number nine"/>
+
+            <Label
+                Text="Hola! Esta es la página secundaria"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Presione el boton para cambiar a una imagen aleatoria."
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Presione el boton para cambiar a una imagen aleatoria." />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Cambia la imagen." 
+                SemanticProperties.Hint="Cambia la imagen."
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" Background="#6297CA" />
+
+            <Button
+                x:Name="CounterBtn2"
+                Text="Volver a la imagen anterior." 
+                SemanticProperties.Hint="Hola."
+                Clicked="boton2"
+                HorizontalOptions="Fill" Background="Goldenrod" />
+                
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -8,8 +8,13 @@
     Title="App_Multiplataforma">
 
     <ShellContent
-        Title="Home"
+        Title="Inicio"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    
+    <ShellContent
+    Title="Secundaria"
+    ContentTemplate="{DataTemplate local:secundaria}"
+    Route="secundaria" />
 
 </Shell>
